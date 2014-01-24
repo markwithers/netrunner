@@ -1,16 +1,16 @@
-var player = require('./models/player')
+var playerList = require('./models/playerList')
 
 var app = Sammy('#main', function() {
   
   this.get('#path', function() {
     this.$element().html('A new route!');
 
-    mark = player('marcus');
-    alert(JSON.stringify(mark));
+    playerList.add('Mark');
+    playerList.add('Joey');
   });
 
   this.get('#test', function() { 
-    alert('test');
+    this.load('./app/views/addPlayers.mustache').render();
   });
 
 });

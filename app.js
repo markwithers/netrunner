@@ -18,8 +18,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', function(req, res){
-  res.send('okay');
+app.get('/', function(req, res) {
+  res.sendfile('public/index.html');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
